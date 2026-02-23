@@ -1,0 +1,54 @@
+Já que no meu computador pessoal o Windows é o OS instalado, resolvi usar umas das ferramentas que o professor recomendou.
+
+Passo a Passo para instalar através do MinGW:
+
+1- Visitar o site: https://winlibs.com/#download-release
+2- Ir em 'Download'
+3- Escolher a versão desejada e baixar o ZIP-Archive
+4- Extrair o arquivo
+5- Colocar no seu diretorio 'root'
+
+Comandos Executados na tarefa:
+    gcc --version
+    gcc hello.c -o hello
+    .\a.exe
+
+Respostas das perguntas da Tutoria 1:
+Qual sistema operacional você utilizou?
+    Eu usei Windows
+
+Qual ferramenta escolheu para instalar o GCC?
+    MinGW
+
+Teve algum erro? Como resolveu?
+    não tive nenhum problema, usei a documentação oficial e vídeos no youtube.
+
+
+
+
+Since my personal computer or Windows has the operating system installed, I decided to use one of the tools the professor recommended.
+
+Step-by-step to install using MinGW:
+
+1- Visit the website: https://winlibs.com/#download-release
+2- Go to ‘Download’
+3- Choose the desired version and download the ZIP-Archive
+4- Extract the file
+5- Place it in your 'root' directory
+
+Commands executed in the task:
+
+    gcc --version
+    gcc hello.c -o hello
+    .\a.exe
+
+Answers to the questions from Tutorial 1:
+
+Which operating system did you use?
+    I use Windows
+
+Which tool did you choose to install GCC?
+    MinGW
+
+Did you encounter any errors? How did you resolve them?
+    I didn't have any problems, I used the official documentation and YouTube videos for the basics configuration and execution.
