@@ -1,0 +1,16 @@
+I. Desafío Teórico: Fundamentos de C e GCC
+Responda às questões abaixo com base nos conceitos de processamento de linguagem estudados:
+ 
+ 
+1. As Etapas da Compilação: O compilador GCC não transforma o código diretamente em um executável; ele passa por quatro etapas.
+Explique brevemente o que ocorre na etapa do Pré-processador e na etapa do Editor de Ligação (Linker).
+    Pré-processador: Ele remove todos os comentários do código, e inclui o 'header' no arquivo, e por fim e troca todos os 'MACROS' com o seu código.
+    Ligação (Linker): É o ato de combinar todos os módulos em um só executável, e também vai ligar a biblioteca para a execução de funções.
+ 
+2. Diretivas de Pré-processamento: Qual é a função da diretiva #include <stdio.h> e por que ela é essencial para o uso da função printf?
+    Quando é feita o pré-processamento o compilador vai procurar a '#include <stdio.h>' frase através do #, e vai realizar a troca pelo conteúdo referenciado no arquivo.
+    Já que a função printf fica na biblioteca, é essencial que o compilador saiba que está tratando, para poder fazer a busca da função através da sua assinatura.
+ 
+3. Comandos de Terminal: No prompt de comando, qual é a diferença entre executar gcc fonte.c -S e executar gcc fonte.c -o programa?
+    gcc fonte.c -S: Faz com que a compilação para antes da transformação do código assembly, fazendo que seja gerado um arquivo assembly.
+    gcc fonte.c -o programa:  ele completa a compilação e gera um arquivo executável.
