@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    double A, B, media;
+
+    if (scanf("%lf %lf", &A, &B) == 2) {
+        media = (A * 3.5 + B * 7.5) / 11.0;
+        printf("MEDIA = %.5f\n", media);
+    }
+
+    return 0;
+}
