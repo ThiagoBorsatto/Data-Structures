@@ -63,7 +63,7 @@ int desenfileirar(Fila *f) {
     free(antigo_inicio);
     f->tamanho--;
 
-    return 0;
+    return 1;
 }
 
 void imprimir(Fila *f) {
@@ -76,6 +76,10 @@ void imprimir(Fila *f) {
         atual = atual->proximo;
     }
     printf("\n");
+}
+
+void destruir(Fila *f) {
+    while (desenfileirar(f)) {}
 }
 
 int main() {
