@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+void vetorEspecial() {
+    int *ptr = (int *) malloc(5 * sizeof(int));
+    int *inicio = ptr; 
 
-int main() {
-    int vetor[5];
+    for (int i = 0; i < 5; i++) *(ptr + i) = (i + 1) * 10;
 
-    for (int i = 0; i < sizeof(vetor); i++)
-    {
-        
+    printf("Valores: ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *ptr);
+        ptr++; 
     }
-    
-
-    return 0;
+    free(inicio);
 }
