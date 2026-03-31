@@ -3,15 +3,15 @@ typedef struct {
     float preco;
 } Produto;
 
-void reset_estoque(Produto *p) {
+void zerarValores(Produto *p) {
     p->id = 0;
     p->preco = 0.0;
 }
 
-void exemplo_produto() {
+int main() {
     Produto *p = (Produto *) malloc(sizeof(Produto));
     p->id = 101;
     p->preco = 59.90;
-    reset_estoque(p);
+    zerarValores(p);
     free(p);
 }
