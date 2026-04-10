@@ -18,20 +18,34 @@ void inicializar(Pilha *p) {
 }
 
 int push(Pilha *p, const char *mensagem) {
-    No *novo = (No *) malloc(sizeof(No));
-    if (novo == NULL) {
-        printf("Sem memoria disponivel, libere espaco e tente novamente!");
-        return 0;
-    }
-
-    for (int i = 0; i < strlen(mensagem); i++) {
-        novo->letra = mensagem[i];
-        printf("letra: %c\n", novo->letra);
+    int tamanhoDaMensagem = strlen(mensagem);
+    // printf("Tamanho da mensagem: %d\n", tamanhoDaMensagem);
+    
+    for (int i = 0; i < tamanhoDaMensagem; i++) {
+        No *novo = (No *) malloc(sizeof(No));
+        if (novo == NULL) {
+            printf("Sem memoria disponivel, libere espaco e tente novamente!");
+            return 0;
+        }
+        
         novo->proximo = p->topo;
-
+        novo->letra = mensagem[i];
+        
         p->topo = novo;
         p->quantidade++;
     }
+    return 1;
+}
+
+int criptografiaReversa(Pilha *p) {
+    No *noTemporario;
+    noTemporario = p->topo;
+
+    printf("Mensagem reversa: ");
+    for (size_t i = 0; i < p->quantidade; i++) {
+        printf("%c", noTemporario->letra);
+        noTemporario = noTemporario->proximo;
+    }    
     return 1;
 }
 
@@ -40,7 +54,9 @@ int main() {
 
     inicializar(&p);
     
-    push(&p, "thiago");
+    push(&p, "thiago borsatto");
+
+    criptografiaReversa(&p);
 
     return 0;
 }
