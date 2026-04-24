@@ -22,6 +22,5 @@ int main() {
     printf("Tamanho da fila: %d\n", quantidadeDePacientesNaFila(&filaDePacientes));
     printf("\n");
 
-    destruirFila(&filaDePacientes);
     return 0;
 }

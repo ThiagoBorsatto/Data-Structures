@@ -18,10 +18,12 @@ typedef struct
 } Fila;
 
 void inicializarFila(Fila *f);
-int inserir_triagem(Fila *f, Paciente p);
-int removerPacienteNaFila(Fila *f, Paciente* p);
 void chamarPaciente(No *noPaciente);
+void imprimir_auditoria(Fila *f);
+
+int inserir_triagem(Fila *f, Paciente p);
+int inserir_emergencia(Fila *f, Paciente p);
+int atender_paciente(Fila *f);
 int quantidadeDePacientesNaFila(Fila* f);
-void destruirFila(Fila* f);
 
 #endif

@@ -20,74 +20,111 @@ int inserir_triagem(Fila *f, Paciente p) {
     novo->previous = NULL;
     novo->next = NULL;
 
-    if (f->head == NULL && f->tail == NULL)
-    {
+    if (f->head == NULL && f->tail == NULL) {
         f->head = novo;
         f->tail = novo;
-        printf("Paciente inserido no HEAD da fila\n");
-        chamarPaciente(novo);
     } else {
         f->tail->next = novo;
         novo->previous = f->tail;
-        printf("Paciente inserido no TAIL da fila\n");
-        chamarPaciente(novo);
     }
     
     f->tail = novo;
     f->size++;
-
-    int numero = quantidadeDePacientesNaFila(f);
-    printf("Pessoas na fila: %d\n", numero);
-    printf("\n");
+    free(novo);
 
     return 1;
 }
 
-// int removerPacienteNaFila(Fila *f, Paciente* p) {
-//     if (f == NULL)
-//     {
-//         printf("A fila ja esta vazia\n");
-//         return 0;
-//     }
+int inserir_emergencia(Fila *f, Paciente p) {
+    No* novo = (No *) malloc(sizeof(No));
 
-//     No *noTemporario;
-//     noTemporario = f->inicioDaFila;
-//     *p = noTemporario->dadosDoPaciente;
+    if (novo == NULL)
+    {
+        printf("Sem espaco na memoria, libere espaco e tente novamente\n");
+        return 0;
+    }
 
-//     chamarPaciente(p);
+    novo->dadosDoPaciente = p;
+    novo->previous = NULL;
+    novo->next = f->head;
 
-//     f->inicioDaFila = f->inicioDaFila->proximo;
+    f->head->previous = novo;
+    f->head = novo;
+    f->size++;
 
-//     if (f->inicioDaFila == NULL)
-//     {
-//         f->finalDaFila == NULL;
-//     }
+    free(novo);
 
-//     free(noTemporario);
-//     f->quantidadeDePacientes--;
-//     return 1;
-// }
+    return 1;
+}
+
+int atender_paciente(Fila *f) {
+    if (f == NULL)
+    {
+        printf("A fila ja esta vazia\n");
+        return 0;
+    }
+    
+    No* noTemporario = (No *) malloc(sizeof(No));
+    
+
+
+    free(noTemporario);
+    return 1;
+}
 
 void chamarPaciente(No* noPaciente) {
-    printf("--CHAMANDO PACIENTE---\n");
+    printf("--- CHAMANDO PACIENTE ---\n");
     printf("Nome: %s\n", noPaciente->dadosDoPaciente.nomeDoPaciente);
     printf("Codigo: %d\n", noPaciente->dadosDoPaciente.codigoDeInscricao);
     printf("Procedimento: %s\n", noPaciente->dadosDoPaciente.codigoDoProcedimento);
     
     if (noPaciente->next == NULL && noPaciente->previous == NULL) {
         printf("\n");
-        printf("Sem chamados anteriores e proximas, fila esta vazia.\n");
-        printf("\n");
+        printf("Sem chamados anteriores e proximas.\n");
+        printf("----------------------\n");
     } else if (noPaciente->next == NULL && noPaciente->previous != NULL) {
         printf("\n");
         printf("Paciente Anterior: %s, Inscricao: %d\n", noPaciente->previous->dadosDoPaciente.nomeDoPaciente, noPaciente->previous->dadosDoPaciente.codigoDeInscricao);
+        printf("----------------------\n");
+    } else if (noPaciente->next != NULL && noPaciente->previous == NULL) {
         printf("\n");
+        printf("Proximo Paciente: %s, Inscricao: %d\n", noPaciente->next->dadosDoPaciente.nomeDoPaciente, noPaciente->next->dadosDoPaciente.codigoDeInscricao);
+        printf("----------------------\n");
     } else {
         printf("\n");
         printf("Paciente Anterior: %s, Inscricao: %d\n", noPaciente->previous->dadosDoPaciente.nomeDoPaciente, noPaciente->previous->dadosDoPaciente.codigoDeInscricao);
         printf("Proximo Paciente: %s, Inscricao: %d\n", noPaciente->next->dadosDoPaciente.nomeDoPaciente, noPaciente->next->dadosDoPaciente.codigoDeInscricao);
-        printf("\n");
+        printf("-------------------------\n");
     }
+}
+
+void imprimir_auditoria(Fila *f) {
+    No* noTemporario = (No *) malloc(sizeof(No));
+    noTemporario = f->head;
+
+    printf("--- FILA DO COMECO AO FIM ---\n");
+    for (int i = 0; i < f->size; i++) {
+        printf("--- POSSICAO NA FILA: %d ---\n", i + 1);
+        printf("Nome: %s\n", noTemporario->dadosDoPaciente.nomeDoPaciente);
+        printf("Codigo: %d\n", noTemporario->dadosDoPaciente.codigoDeInscricao);
+        printf("Procedimento: %s\n", noTemporario->dadosDoPaciente.codigoDoProcedimento);
+        printf("--------------------------\n");
+        printf("\n");
+        noTemporario = noTemporario->next;
+    }
+
+    noTemporario = f->tail;
+    printf("--- FILA DO FIM AO COMECO ---\n");
+    for (int i = 0; i < f->size; i++) {
+        printf("--- POSSICAO NA FILA: %d ---\n", f->size - i);
+        printf("Nome: %s\n", noTemporario->dadosDoPaciente.nomeDoPaciente);
+        printf("Codigo: %d\n", noTemporario->dadosDoPaciente.codigoDeInscricao);
+        printf("Procedimento: %s\n", noTemporario->dadosDoPaciente.codigoDoProcedimento);
+        printf("--------------------------\n");
+        printf("\n");
+        noTemporario = noTemporario->previous;
+    }
+    free(noTemporario);
 }
 
 int quantidadeDePacientesNaFila(Fila *f) {

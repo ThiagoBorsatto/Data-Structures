@@ -67,8 +67,3 @@ void chamarPaciente(Paciente* p) {
 int quantidadeDePacientesNaFila(Fila *f) {
     return f->quantidadeDePacientes;
 }
-
-void destruirFila(Fila *f) {
-    Paciente p;
-    while (removerPacienteNaFila(f, &p)) {}
-}

@@ -14,7 +14,10 @@ int main() {
     
     inserir_triagem(&filaDePacientes, paciente1);
     inserir_triagem(&filaDePacientes, paciente2);
-    inserir_triagem(&filaDePacientes, paciente3);
+
+    inserir_emergencia(&filaDePacientes, paciente3);
+
+    imprimir_auditoria(&filaDePacientes);
 
     return 0;
 }
