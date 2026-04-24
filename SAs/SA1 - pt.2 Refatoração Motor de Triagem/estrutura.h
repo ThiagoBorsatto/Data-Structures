@@ -17,13 +17,14 @@ typedef struct
     int size;
 } Fila;
 
-void inicializarFila(Fila *f);
+void inicializarFila(Fila *fila);
 void chamarPaciente(No *noPaciente);
-void imprimir_auditoria(Fila *f);
+void imprimir_auditoria(Fila *fila);
 
-int inserir_triagem(Fila *f, Paciente p);
-int inserir_emergencia(Fila *f, Paciente p);
-int atender_paciente(Fila *f);
-int quantidadeDePacientesNaFila(Fila* f);
+int inserir_triagem(Fila *fila, Paciente paciente);
+int inserir_emergencia(Fila *fila, Paciente paciente);
+int atender_paciente(Fila *fila);
+int remover_paciente_id(Fila *fila, int id);
+int quantidadeDePacientesNaFila(Fila* fila);
 
 #endif
