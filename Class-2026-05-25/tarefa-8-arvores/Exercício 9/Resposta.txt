@@ -1,0 +1,12 @@
+Considere a árvore:
+
+        50
+       /  \
+     30    70
+    / \    / \
+  20  40  60  80
+Escreva a ordem de impressão usando percurso em ordem:
+
+esquerda -> raiz -> direita
+
+A impressão vai ser 20, 30, 40, 50, 60, 70, e 80.

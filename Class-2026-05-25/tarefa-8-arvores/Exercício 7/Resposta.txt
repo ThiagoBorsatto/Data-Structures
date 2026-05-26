@@ -1,0 +1,20 @@
+Considere a árvore:
+
+        50
+       /  \
+     30    70
+    / \    / \
+  20  40  60  80
+Mostre o caminho feito para buscar os valores abaixo:
+
+a. 40
+A busca do número 40 vai começar no número 50, o valor que estámos procurando é menor que o root logo a busca vai para a esquerda, faz a comparação com o proximo valor o 30, nosso valor é maior logo a busca vai para a direita do 30, e assim encontra nosso valor. 
+
+b. 80
+A busca do número 80 vai começar no número 50, o valor que estámos procurando é maior que o root logo a busca vai para a direita, faz a comparação com o proximo valor o 70, nosso valor é maior logo a busca vai para a direita do 70, e assim encontra nosso valor onde a busca vai igualar os valores.
+
+c. 25
+A busca do número 25 vai começar no número 50, o valor que estámos procurando é menor que o root logo a busca vai para a esquerda, faz a comparação com o proximo valor o 30, nosso valor é menor logo a busca vai para a esquerda do 30, faz a comparação com o valor de 20 e move a busca para a direita, mas não encontra nada (NULL).
+
+d. 60
+A busca do número 60 vai começar no número 50, o valor que estámos procurando é maior que o root logo a busca vai para a direita, faz a comparação com o proximo valor o 70, nosso valor é menor logo a busca vai para a esquerda do 70, e assim encontra nosso valor onde a busca vai igualar os valores.

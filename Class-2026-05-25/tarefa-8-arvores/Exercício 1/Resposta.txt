@@ -1,0 +1,25 @@
+Exercício 1 — Identificando partes da árvore
+
+Observe a árvore abaixo:
+
+        10
+       /  \
+      5    20
+     / \     \
+    3   7     30
+Responda:
+
+a. Qual é a raiz da árvore?
+È o número 10, o famoso ROOT
+
+b. Quais são as folhas?
+As folhas são o número 3, 7 e 30
+
+c. Quais são os filhos do nó 5?
+O número 3 e 7
+
+d. Qual é o pai do nó 30?
+É o número 20
+
+e. Essa árvore é binária? Justifique.
+Ela é uma árvore binánaria, já que se nós percorremos itens partindo dos elementos mais profundos e à esquerda possíveis até os mais profundos à direita, teremos os valores sempre ordenados.

@@ -1,0 +1,18 @@
+Considere a seguinte sequência de inserção em uma árvore binária de busca:
+
+50, 30, 70, 20, 40, 60, 80
+Desenhe a árvore final.
+
+Depois, responda:
+
+a. Quem fica à esquerda do 50?
+O número 30
+
+b. Quem fica à direita do 50?
+O número 70
+
+c. O valor 40 fica à esquerda ou à direita do 30?
+O valor 40 ficaram à esquerda do 30
+
+d. O valor 80 fica à esquerda ou à direita do 70?
+O valor 80 ficaram à direita do 70
