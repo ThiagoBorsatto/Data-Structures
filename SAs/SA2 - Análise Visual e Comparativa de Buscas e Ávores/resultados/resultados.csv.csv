@@ -1,0 +1,17 @@
+﻿Tamanho,Tipo dos Dados,Valor Buscado,Busca Sequencial (Comparações),Busca Binária (Comparações),Árvore (Comparações),Altura da Árvore
+100,Ordenados,1,1,11,1,99
+100,Ordenados,51,51,11,101,99
+100,Ordenados,100,100,13,199,99
+100,Ordenados,200,100,14,200,99
+100,Embaralhados,12,12,5,1,13
+100,Embaralhados,56,56,7,21,13
+100,Embaralhados,26,26,11,17,13
+100,Embaralhados,200,100,14,8,13
+10000,Ordenados,1,1,25,1,9999
+10000,Ordenados,5001,5001,25,10001,9999
+10000,Ordenados,10000,10000,27,19999,9999
+10000,Ordenados,10100,10000,28,20000,9999
+10000,Embaralhados,7780,7780,25,1,31
+10000,Embaralhados,841,841,23,41,31
+10000,Embaralhados,4226,4226,27,37,31
+10000,Embaralhados,10100,10000,28,18,31
