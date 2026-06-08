@@ -31,7 +31,7 @@ void executarExperimento(int tamanho, int dadosOrdenados) {
         raiz = inserirNaArvore(raiz, vetor[i]);
     }
 
-    if (tamanho <= 100000 || !dadosOrdenados) {
+    if (tamanho <= 10000 || !dadosOrdenados) {
         printf("Altura da arvore: %d\n", calcularAltura(raiz));
     } else {
         printf("Altura da arvore: [Omitida para evitar Stack Overflow em O(N)]\n");
@@ -80,7 +80,7 @@ void executarExperimento(int tamanho, int dadosOrdenados) {
 }
 
 int main() {
-    int tamanhos[] = {100, 10000}; 
+    int tamanhos[] = {1000, 10000}; 
 
     for (int i = 0; i < 2; i++) {
         executarExperimento(tamanhos[i], 1); 
